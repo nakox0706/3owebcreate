@@ -20,7 +20,7 @@
   }
   /* スタンプ画像最大幅 */
   .line .stanp img{
-    max-width:200px;
+    max-width:150px;
   }
 
   /* 会話部分 */
@@ -41,7 +41,7 @@
       figure {
         width: 50px;
         position: absolute;
-        top: 25px;
+        top: 15px;
         left: 0;
         padding: 0;
         margin: 0;
@@ -65,7 +65,7 @@
       .text{
         margin: 0;
         position: relative;
-        padding: 15px;
+        padding: 10px;
         border-radius: 20px;
         background-color: #ffffff;
         /* 吹き出し */
@@ -75,9 +75,9 @@
           display: block;
           width: 0;
           height: 0;
-          left: -7px;
+          left: -10px;
           top: 10px;
-          border-right: 10px solid #ffffff;
+          border-right: 20px solid #ffffff;
           border-top: 10px solid transparent;
           border-bottom: 10px solid transparent;
         }
@@ -94,7 +94,7 @@
         clear: both;
         /* コメントエリア */
         .text {
-          padding: 15px;
+          padding: 10px;
           border-radius: 20px;
           background-color: #8de055;
           margin: 0;
@@ -106,9 +106,9 @@
             display: block;
             width: 0;
             height: 0;
-            right: -7px;
+            right: -10px;
             top: 10px;
-            border-left: 10px solid #8de055;
+            border-left: 20px solid #8de055;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
           }
