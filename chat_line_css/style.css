@@ -31,7 +31,7 @@
     width: 100%;
     position: relative;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     max-width: 80%;
     clear: both;
 }
@@ -67,7 +67,7 @@
 .line .line__left .text{
   margin: 0;
   position: relative;
-  padding: 15px;
+  padding: 10px;
   border-radius: 20px;
   background-color: #ffffff;
 
@@ -80,18 +80,18 @@
   display: block;
   width: 0;
   height: 0;
-  left: -10px;
-  top: 12px;
-  border-right: 15px solid #ffffff;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  left: -7px;
+  top: 10px;
+  border-right: 10px solid #ffffff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
 /* 自分の会話 */
 .line .line__right {
     position: relative;
     display: block;
-    margin: 10px 0;
+    margin: 5px 0;
     max-width: 75%;
     float: right;
     margin-right: 20px;
@@ -100,7 +100,7 @@
 
 /* コメントエリア */
 .line .line__right .text {
-  padding: 15px;
+  padding: 10px;
   border-radius: 20px;
   background-color: #8de055;
   margin: 0;
@@ -114,11 +114,11 @@
   display: block;
   width: 0;
   height: 0;
-  right: -10px;
-  top: 12px;
-  border-left: 15px solid #8de055;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  right: -7px;
+  top: 10px;
+  border-left: 10px solid #8de055;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
 /* 自分がスタンプを送る時 */
