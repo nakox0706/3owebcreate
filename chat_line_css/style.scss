@@ -1,10 +1,19 @@
+@charset "UTF-8";
+
 /*/////////////////////////////////////////////////
 //LINE風チャット画面をWordPressの記事内に表示する
 /////////////////////////////////////////////////*/
 
+// color
+$baseColor:    #7494c0; // 背景色
+$myTextColor:    #8de055; // 吹き出しの色
+
+
+/*///////////////////////////////////////////////*/
+
 .line {
   padding:0;
-  background: #7494c0;
+  background: $baseColor;
   overflow: hidden;
   max-width: 400px;
   margin: 20px auto;
@@ -19,13 +28,14 @@
     color: #ffffff;
   }
   /* スタンプ画像最大幅 */
-  .line .stanp img{
+   .stanp img{
     max-width:150px;
   }
 
   /* 会話部分 */
   .line__contents {
     padding: 10px;
+    padding-bottom: 20px;
     line-height: 135%;
 
     &.scroll {
@@ -88,6 +98,7 @@
         }
 
       }
+     }
       /* 自分の会話 */
       .line__right {
         position: relative;
@@ -101,7 +112,7 @@
         .text {
           padding: 10px;
           border-radius: 20px;
-          background-color: #8de055;
+          background-color: $myTextColor;
           margin: 0;
           margin-left: 80px;
           /* 吹き出し */
@@ -113,7 +124,7 @@
             height: 0;
             right: -10px;
             top: 10px;
-            border-left: 20px solid #8de055;
+            border-left: 20px solid $myTextColor;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
           }
@@ -137,6 +148,5 @@
           color: #ffffff;
         }
       }
-    }
   }
 }
