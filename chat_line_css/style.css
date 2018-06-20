@@ -24,6 +24,12 @@
 /* 会話部分 */
 .line .line__contents {
   padding: 10px;
+  line-height: 135%;
+}
+
+/* スタンプ画像最大幅 */
+.line .stanp img{
+  max-width:200px;
 }
 
 /* 相手の会話 */
