@@ -28,6 +28,11 @@
     padding: 10px;
     line-height: 135%;
 
+    &.scroll {
+      height: 500px;
+      overflow-y: scroll;
+    }
+
     /* 相手の会話 */
     .line__left {
       width: 100%;

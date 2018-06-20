@@ -27,6 +27,11 @@
   line-height: 135%;
 }
 
+.line .scroll {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 /* スタンプ画像最大幅 */
 .line .stanp img{
   max-width:150px;
