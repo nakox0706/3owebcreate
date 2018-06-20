@@ -1,0 +1,141 @@
+/*/////////////////////////////////////////////////
+//LINE風チャット画面をWordPressの記事内に表示する
+/////////////////////////////////////////////////*/
+
+
+.line {
+  padding:0;
+  background: #7494c0;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: 80%;
+}
+
+/* タイトル部分 */
+.line .line__title {
+  background: #273246;
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+/* 会話部分 */
+.line .line__contents {
+  padding: 10px;
+}
+
+/* 相手の会話 */
+.line .line__left {
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    max-width: 80%;
+    clear: both;
+}
+
+/* アイコン画像 */
+.line .line__left figure {
+    width: 50px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* 正方形を用意 */
+.line .line__left figure img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.line .line__left .line__left-text{
+  margin-left: 70px;
+}
+
+.line .line__left .line__left-text .name{
+  font-size: 80%;
+  color: #ffffff;
+}
+
+/* コメントエリア */
+.line .line__left .text{
+  margin: 0;
+  position: relative;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+}
+
+/* 吹き出し */
+.line .line__left .text::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -10px;
+  top: 12px;
+  border-right: 15px solid #ffffff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+/* 自分の会話 */
+.line .line__right {
+    position: relative;
+    display: block;
+    margin: 10px 0;
+    max-width: 75%;
+    float: right;
+    margin-right: 20px;
+    clear: both;
+}
+
+/* コメントエリア */
+.line .line__right .text {
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #8de055;
+  margin: 0;
+  margin-left: 80px;
+}
+
+/* 吹き出し */
+.line .line__right .text::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  right: -10px;
+  top: 12px;
+  border-left: 15px solid #8de055;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+/* 自分がスタンプを送る時 */
+.line .line__right .stanp {
+  position: relative;
+  margin-left: 80px;
+}
+
+/* 既読エリア */
+.line .line__right .date{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  text-align: right;
+  left: -30px;
+  bottom: 0px;
+  font-size: 80%;
+  color: #ffffff;
+}
