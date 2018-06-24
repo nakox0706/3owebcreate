@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
 /*/////////////////////////////////////////////////
-//LINE風チャット画面をWordPressの記事内に表示する
+//LINE風チャット画面(会話方式)を記事に表示する方法
 /////////////////////////////////////////////////*/
 
 // color
+$titleColor:   #273246; //タイトル背景色
 $baseColor:    #7494c0; // 背景色
-$myTextColor:    #8de055; // 吹き出しの色
-
+$myTextColor:  #8de055; // 吹き出しの色
 
 /*///////////////////////////////////////////////*/
 
-.line {
+.line__container {
   padding:0;
   background: $baseColor;
   overflow: hidden;
@@ -21,14 +21,14 @@ $myTextColor:    #8de055; // 吹き出しの色
 
    /* タイトル部分 */
   .line__title {
-    background: #273246;
+    background: $titleColor;
     padding: 10px;
     text-align: center;
     font-size: 150%;
     color: #ffffff;
   }
   /* スタンプ画像最大幅 */
-   .stanp img{
+   .stamp img {
     max-width:150px;
   }
 
@@ -77,14 +77,14 @@ $myTextColor:    #8de055; // 吹き出しの色
         }
       }
       /* コメントエリア */
-      .text{
+      .text {
         margin: 0;
         position: relative;
         padding: 10px;
         border-radius: 20px;
         background-color: #ffffff;
         /* 吹き出し */
-        &::after{
+        &::after {
           content: '';
           position: absolute;
           display: block;
@@ -106,7 +106,7 @@ $myTextColor:    #8de055; // 吹き出しの色
         margin: 5px 0;
         max-width: 75%;
         float: right;
-        margin-right: 20px;
+        margin-right: 15px;
         clear: both;
         /* コメントエリア */
         .text {
@@ -116,7 +116,7 @@ $myTextColor:    #8de055; // 吹き出しの色
           margin: 0;
           margin-left: 80px;
           /* 吹き出し */
-          &::after{
+          &::after {
             content: '';
             position: absolute;
             display: block;
@@ -131,12 +131,12 @@ $myTextColor:    #8de055; // 吹き出しの色
 
         }
         /* 自分がスタンプを送る時 */
-        .stanp {
+        .stamp {
           position: relative;
           margin-left: 80px;
         }
         /* 既読エリア */
-        .date{
+        .date {
           content: '';
           position: absolute;
           display: block;

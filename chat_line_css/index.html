@@ -1,18 +1,19 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"/>
-  <title>LINE風チャット画面をWordPressの記事内に表示する │ 3oWebCreate WEB小ネタと生活ライフハック</title>
+  <title>LINE風チャット画面(会話方式)を記事に表示する方法 │ 3oWebCreate WEB小ネタと生活ライフハック</title>
   <link rel='stylesheet' href='style.css' type='text/css' media='all' />
 </head>
 <body>
+
   <!-- ▼LINE風ここから -->
-  <div class="line">
+  <div class="line__container">
     <!-- タイトル -->
     <div class="line__title">
       うさきち友の会
     </div>
 
-    <!-- 会話エリア  scrollを外すと高さ固定解除 -->
+    <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
     <div class="line__contents scroll">
 
       <!-- 相手の吹き出し -->
@@ -28,7 +29,7 @@
 
       <!-- 相手のスタンプ -->
       <div class="line__left">
-        <div class="stanp"><img src="./stamp/13.png" /></div>
+        <div class="stamp"><img src="./stamp/13.png" /></div>
       </div>
 
       <!-- 相手の吹き出し -->
@@ -50,11 +51,12 @@
 
       <!-- 自分のスタンプ -->
       <div class="line__right">
-        <div class="stanp"><img src="./stamp/22.png" /></div>
+        <div class="stamp"><img src="./stamp/22.png" /></div>
         <span class="date">既読<br>0:30</span>
       </div>
 
     </div>
+    <!--　▲会話エリア ここまで -->
   </div>
   <!--　▲LINE風ここまで -->
 
