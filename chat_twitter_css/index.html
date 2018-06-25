@@ -1,63 +1,82 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"/>
-  <title>LINE風チャット画面(会話方式)を記事に表示する方法 │ 3oWebCreate WEB小ネタと生活ライフハック</title>
-  <link rel='stylesheet' href='style.css' type='text/css' media='all' />
+  <title>twitter風チャット画面(会話方式)を記事に表示する方法 │ 3oWebCreate WEB小ネタと生活ライフハック</title>
+  <link rel='stylesheet' href='assets/css/style.css' type='text/css' media='all' />
 </head>
 <body>
 
-  <!-- ▼LINE風ここから -->
-  <div class="line__container">
+  <!-- ▼twitter風ここから -->
+  <div class="twitter__container">
     <!-- タイトル -->
-    <div class="line__title">
-      うさきち友の会
+    <div class="twitter__title">
+      <span class="twitter-logo"></span>
     </div>
 
-    <!-- ▼会話エリア scrollを外すと高さ固定解除 -->
-    <div class="line__contents scroll">
+    <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
+    <div class="twitter__contents scroll">
 
-      <!-- 相手の吹き出し -->
-      <div class="line__left">
+      <!-- 記事エリア -->
+      <div class="twitter__block">
         <figure>
-          <img src="icon.png" />
+          <img src="assets/img/icon.png" />
         </figure>
-        <div class="line__left-text">
-          <div class="name">うさきち</div>
-          <div class="text">ねぇねぇ、帰ってくるのおそいんだけど！！今どこいまどこいまどこーー</div>
+        <div class="twitter__block-text">
+          <div class="name">ちけじ<span class="name_reply">@ckj</span></div>
+          <div class="date">10分前</div>
+          <div class="text">
+            今日も終電だよ～<br>
+            <img src="assets/img/gakuburu_black-middle.gif" />
+          </div>
+          <!-- アイコンエリア　WPでBRが入る為改行なし -->
+          <span class="twitter-bubble"></span><span class="twitter-loop"></span><span class="twitter-heart"></span>
+
         </div>
       </div>
 
-      <!-- 相手のスタンプ -->
-      <div class="line__left">
-        <div class="stamp"><img src="./stamp/13.png" /></div>
-      </div>
-
-      <!-- 相手の吹き出し -->
-      <div class="line__left">
+      <!-- 記事エリア -->
+      <div class="twitter__block">
         <figure>
-          <img src="icon.png" />
+          <img src="assets/img/icon.png" />
         </figure>
-        <div class="line__left-text">
-          <div class="name">うさきち</div>
+        <div class="twitter__block-text">
+          <div class="name">ちけじ<span class="name_reply">@ckj</span></div>
+          <div class="date">1時間前</div>
+          <div class="text">
+            残業でお腹空いたから朝までやってるお店でラーメン食べることにした(^o^)神の食べ物すぎる・・うまぁ
+            <div class="in-pict">
+              <img src="assets/img/sample.jpg">
+            </div>
+          </div>
+          <!-- アイコンエリア　WPでBRが入る為改行なし -->
+          <span class="twitter-bubble">3</span><span class="twitter-loop">1</span><span class="twitter-heart">8</span>
+
         </div>
       </div>
 
-      <!-- 自分の吹き出し -->
-      <div class="line__right">
-        <div class="text">了解！寝過ごさないようにだよ〜風呂ためとこ</div>
-        <span class="date">既読<br>0:30</span>
+      <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="assets/img/icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">ナコ<span class="name_reply">@nako_x</span></div>
+          <div class="date">2018/06/24 5:34</div>
+          <div class="text">
+            睡眠２時間で出社なんだけど…
+            <a href="https://3owebcreate.com/">https://3owebcreate.com/</a>
+          </div>
+          <!-- アイコンエリア　WPでBRが入る為改行なし -->
+          <span class="twitter-bubble">1</span><span class="twitter-loop"></span><span class="twitter-heart"></span>
+
+        </div>
       </div>
 
-      <!-- 自分のスタンプ -->
-      <div class="line__right">
-        <div class="stamp"><img src="./stamp/22.png" /></div>
-        <span class="date">既読<br>0:30</span>
-      </div>
 
     </div>
-    <!--　▲会話エリア ここまで -->
+    <!--　▲タイムラインエリア ここまで -->
   </div>
-  <!--　▲LINE風ここまで -->
+  <!--　▲twitter風ここまで -->
 
 </body>
 
