@@ -118,6 +118,10 @@
 //埋め込みアイコン
 ////////////////////////////////////////////*/
 
+.twitter__container .twitter__icon br{
+  display: none;
+}
+
 .twitter__container .twitter__icon .twitter-bubble {
   width: 14px;
   height: 14px;

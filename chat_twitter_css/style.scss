@@ -125,6 +125,11 @@ $baseColor:   #58aeed; //ベースカラー
         ////////////////////////////////////////////*/
 
         .twitter__icon {
+
+          br {
+            display: none;
+          }
+          
           $icons: 'twitter-bubble', 'twitter-heart', 'twitter-loop';
 
           @each $icon in $icons {
