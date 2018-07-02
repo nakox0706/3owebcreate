@@ -14,26 +14,31 @@
 
 .wp-embed {
   padding: 15px;
+  line-height: 140%;
 }
 
 .wp-embed-featured-image {
-    width: 30%;
+    width: 40%;
     overflow: hidden;
     float: left;
     margin-bottom: 10px;
 }
 
 .wp-embed-heading {
-	width: 70%;
+	width: 60%;
 	float: right;
 }
 
 .wp-embed-heading a{
   padding-left:20px;
-	font-size: 1rem;
+	font-size: 120%;
   font-weight: bold ;
   color: #333 ;
 	display: block;
+}
+
+.wp-embed-site-title {
+  font-size: 80%;
 }
 
 .wp-embed-footer {
@@ -45,7 +50,6 @@
   padding-left:20px;
   padding-top: 10px;
   color: #333 ;
-  font-size: 80%;
 }
 
 </style>
@@ -127,7 +131,15 @@
 			<a href="<?php the_permalink(); ?>" target="_top">
 				<?php the_title(); ?>
 			</a>
-      <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 110, "...", "UTF-8"); ?></div>
+      <?php
+      $ua = $_SERVER['HTTP_USER_AGENT'];
+      if (!preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
+        ?>
+          <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 240, "...", "UTF-8"); ?></div>
+        <?php
+      }
+    ?>
+
 		</div>
 
 		<?php if ( $thumbnail_id && 'square' === $shape ) : ?>
