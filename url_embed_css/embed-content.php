@@ -1,0 +1,162 @@
+<?php
+/**
+ * Contains the post embed content template part
+ *
+ * When a post is embedded in an iframe, this file is used to create the content template part
+ * output if the active theme does not include an embed-content.php template.
+ *
+ * @package WordPress
+ * @subpackage Theme_Compat
+ * @since 4.5.0
+ */
+?>
+<style>
+
+.wp-embed {
+  padding: 15px;
+}
+
+.wp-embed-featured-image {
+    width: 40%;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.wp-embed-heading {
+	width: 60%;
+	float: right;
+}
+
+.wp-embed-heading a{
+  padding-left:20px;
+	font-size: 1rem;
+  font-weight: bold ;
+  color: #333 ;
+	display: block;
+}
+
+.wp-embed-footer {
+	margin-top: 10px;
+}
+
+.wp-embed-excerpt {
+    color: #333 ;
+    padding-top: 10px;
+    padding-left:20px;
+}
+
+</style>
+
+	<div <?php post_class( 'wp-embed' ); ?>>
+		<?php
+		$thumbnail_id = 0;
+
+		if ( has_post_thumbnail() ) {
+			$thumbnail_id = get_post_thumbnail_id();
+		}
+
+		if ( 'attachment' === get_post_type() && wp_attachment_is_image() ) {
+			$thumbnail_id = get_the_ID();
+		}
+
+		/**
+		 * Filters the thumbnail image ID for use in the embed template.
+		 *
+		 * @since 4.9.0
+		 *
+		 * @param int $thumbnail_id Attachment ID.
+		 */
+		$thumbnail_id = apply_filters( 'embed_thumbnail_id', $thumbnail_id );
+
+		if ( $thumbnail_id ) {
+			$aspect_ratio = 1;
+			$measurements = array( 1, 1 );
+			$image_size   = 'full'; // Fallback.
+
+			$meta = wp_get_attachment_metadata( $thumbnail_id );
+			if ( ! empty( $meta['sizes'] ) ) {
+				foreach ( $meta['sizes'] as $size => $data ) {
+					if ( $data['height'] > 0 && $data['width'] / $data['height'] > $aspect_ratio ) {
+						$aspect_ratio = $data['width'] / $data['height'];
+						$measurements = array( $data['width'], $data['height'] );
+						$image_size   = $size;
+					}
+				}
+			}
+
+			/**
+			 * Filters the thumbnail image size for use in the embed template.
+			 *
+			 * @since 4.4.0
+			 * @since 4.5.0 Added `$thumbnail_id` parameter.
+			 *
+			 * @param string $image_size   Thumbnail image size.
+			 * @param int    $thumbnail_id Attachment ID.
+			 */
+			$image_size = apply_filters( 'embed_thumbnail_image_size', $image_size, $thumbnail_id );
+
+			$shape = $measurements[0] / $measurements[1] >= 1.75 ? 'rectangular' : 'square';
+
+			/**
+			 * Filters the thumbnail shape for use in the embed template.
+			 *
+			 * Rectangular images are shown above the title while square images
+			 * are shown next to the content.
+			 *
+			 * @since 4.4.0
+			 * @since 4.5.0 Added `$thumbnail_id` parameter.
+			 *
+			 * @param string $shape        Thumbnail image shape. Either 'rectangular' or 'square'.
+			 * @param int    $thumbnail_id Attachment ID.
+			 */
+			$shape = apply_filters( 'embed_thumbnail_image_shape', $shape, $thumbnail_id );
+		}
+
+		if ( $thumbnail_id && 'rectangular' === $shape ) : ?>
+			<div class="wp-embed-featured-image">
+				<a href="<?php the_permalink(); ?>" target="_top">
+					<?php echo wp_get_attachment_image( $thumbnail_id, $image_size ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
+
+		<div class="wp-embed-heading">
+			<a href="<?php the_permalink(); ?>" target="_top">
+				<?php the_title(); ?>
+			</a>
+      <div class="wp-embed-excerpt noSp"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "…", "UTF-8"); ?></div>
+		</div>
+
+		<?php if ( $thumbnail_id && 'square' === $shape ) : ?>
+			<div class="wp-embed-featured-image square">
+				<a href="<?php the_permalink(); ?>" target="_top">
+					<?php echo wp_get_attachment_image( $thumbnail_id, $image_size ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
+		<?php
+		/**
+		 * Prints additional content after the embed excerpt.
+		 *
+		 * @since 4.4.0
+		 */
+		do_action( 'embed_content' );
+		?>
+
+		<div class="wp-embed-footer">
+			<?php the_embed_site_title() ?>
+
+			<div class="wp-embed-meta">
+				<?php
+				/**
+				 * Prints additional meta content in the embed template.
+				 *
+				 * @since 4.4.0
+				 */
+				do_action( 'embed_content_meta');
+				?>
+			</div>
+		</div>
+	</div>
+<?php
