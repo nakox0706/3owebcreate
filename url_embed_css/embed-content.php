@@ -138,7 +138,7 @@
           <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 240, "...", "UTF-8"); ?></div>
         <?php
       }
-    ?>
+      ?>
 
 		</div>
 
@@ -147,6 +147,14 @@
 				<a href="<?php the_permalink(); ?>" target="_top">
 					<?php echo wp_get_attachment_image( $thumbnail_id, $image_size ); ?>
 				</a>
+        <?php
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+        if (!preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
+          ?>
+            <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 240, "...", "UTF-8"); ?></div>
+          <?php
+        }
+        ?>
 			</div>
 		<?php endif; ?>
 		<?php
