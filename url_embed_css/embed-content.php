@@ -13,8 +13,9 @@
 <style>
 
 .wp-embed {
-  padding: 15px;
-  line-height: 140%;
+  padding: 3% 3% 1% 3%;
+  line-height: 120%;
+  font-size: 12px;
 }
 
 .wp-embed-featured-image {
@@ -39,10 +40,13 @@
 
 .wp-embed-site-title {
   font-size: 80%;
+  line-height: 120%;
+  padding-right: 10px;
 }
 
 .wp-embed-footer {
-	margin-top: 10px;
+	padding-top: 10px;
+  margin-top: 0;
 }
 
 .wp-embed-excerpt {
@@ -135,7 +139,7 @@
       $ua = $_SERVER['HTTP_USER_AGENT'];
       if (!preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
         ?>
-          <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 240, "...", "UTF-8"); ?></div>
+          <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 400) ?></div>
         <?php
       }
       ?>
@@ -151,7 +155,7 @@
         $ua = $_SERVER['HTTP_USER_AGENT'];
         if (!preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
           ?>
-            <div class="wp-embed-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 240, "...", "UTF-8"); ?></div>
+            <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 400) ?></div>
           <?php
         }
         ?>
