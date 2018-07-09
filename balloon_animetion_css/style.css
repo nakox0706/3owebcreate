@@ -97,7 +97,6 @@
   padding: 20px;
   border-radius: 10px;
   background-color: #eeeeee;
-  /* 吹き出し */
 }
 
 .balloon__contener .balloon__right .balloon__text::after {
@@ -124,7 +123,7 @@
 //チャット画面(会話方式)にアイコンを追加する方法
 /////////////////////////////////////////////////*/
 /* Icon Drop */
-@-webkit-keyframes hvr-icon-drop {
+@-webkit-keyframes icon_gan {
   0% {
     opacity: 0;
   }
@@ -138,7 +137,7 @@
     opacity: 1;
   }
 }
-@keyframes hvr-icon-drop {
+@keyframes icon_gan {
   0% {
     opacity: 0;
   }
@@ -151,6 +150,27 @@
   100% {
     opacity: 1;
   }
+}
+
+.icon_gan .balloon__left .balloon__text {
+  background-color: #c7ade2;
+}
+
+.icon_gan .balloon__left .balloon__text::after {
+  border-right: 15px solid #c7ade2;
+}
+
+.icon_gan .icon_emotion {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  background: url("./icon/icon_gan.png") repeat-x 0 0;
+  background-size: auto 100%;
+  -webkit-animation: icon_gan 1s ease-in-out infinite alternate;
+  animation: icon_gan 1s ease-in-out infinite alternate;
+  padding: 0;
 }
 
 @-webkit-keyframes hvr-icon-sink-away {
@@ -229,11 +249,11 @@
   }
 }
 
-.icon_hurry .balloon__text {
+.icon_hurry .balloon__left .balloon__text {
   background-color: #a5d4d8;
 }
 
-.icon_hurry .balloon__text::after {
+.icon_hurry .balloon__left .balloon__text::after {
   border-right: 15px solid #a5d4d8;
 }
 
@@ -303,5 +323,56 @@
   background-size: auto 100%;
   -webkit-animation: icon_oko 1s ease-in-out infinite alternate;
   animation: icon_oko 1s ease-in-out infinite alternate;
+  padding: 0;
+}
+
+@-webkit-keyframes icon_nazo {
+  0% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+}
+
+@keyframes icon_nazo {
+  0% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+}
+
+.icon_nazo .balloon__left .balloon__text {
+  background-color: #e7b3b1;
+}
+
+.icon_nazo .balloon__left .balloon__text::after {
+  border-right: 15px solid #e7b3b1;
+}
+
+.icon_nazo .icon_emotion {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  background: url("./icon/icon_nazo.png") repeat-x 0 0;
+  background-size: auto 100%;
+  -webkit-animation: icon_nazo 1s ease-in-out infinite alternate;
+  animation: icon_nazo 1s ease-in-out infinite alternate;
   padding: 0;
 }
