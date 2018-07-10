@@ -127,6 +127,7 @@
   left: 40px;
   background-size: auto 100%;
   padding: 0;
+  z-index: 1;
 }
 
 .balloon__contener .balloon__right .icon_emotion {
