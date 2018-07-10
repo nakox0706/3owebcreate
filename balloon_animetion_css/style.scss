@@ -1,153 +1,336 @@
 @charset "UTF-8";
 
 /*/////////////////////////////////////////////////
-//twitter風チャット画面(会話方式)を記事に表示する方法
+//チャット画面(会話方式)を記事に表示する方法
 /////////////////////////////////////////////////*/
 
-// color
-$baseColor:   #58aeed; //ベースカラー
+.balloon__contener {
+  clear: both;
+  width: 100%;
+  padding: 10px 0;
 
-/*///////////////////////////////////////////////*/
-
-.twitter__container {
-  padding:0;
-  background: #ffffff;
-  overflow: hidden;
-  max-width: 400px;
-  margin: 20px auto;
-  font-size: 80%;
-  border: solid 1px #eeeeee;
-
-  a {
-    color: $baseColor;
+   &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
   }
 
-  /* タイトル部分 */
-  .twitter__title {
-    background: $baseColor;
-    padding: 10px;
-    text-align: center;
-    font-size: 150%;
-    color: #ffffff;
-
-    .twitter-logo {
-      margin:  0 auto;
-      width: 20px;
-      height: 20px;
-      display: block;
-      background: url(../svg/twitter-logo.svg) center no-repeat;
+  figure {
+    width: 60px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    /* 正方形を用意 */
+    img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      border: solid 1px #dddddd;
     }
 
-    span {
-      font-size: 20px;
+    figcaption {
+      color: #000000;
+      width: 60px;
+      position: absolute;
+      top: 60px;
+      text-align: center;
+      font-size: 70%;
+      line-height: 100%;
     }
+
   }
 
-  /* タイムライン部分 */
-  .twitter__contents {
-    overflow: hidden;
+  .balloon__left {
+    width: 100%;
     position: relative;
-    line-height: 135%;
+    display: block;
+    max-width: 80%;
+    clear: both;
 
-    &.scroll {
-      height: 500px;
-      overflow-y: scroll;
+    figure {
+      left: 0;
     }
 
-    .twitter__block {
-      width: 100%;
-      display: block;
-      padding: 10px;
-      margin-bottom: 5px;
-      border-bottom: solid 1px #eeeeee;
-      overflow: hidden;
+    .balloon__text {
+      margin-left: 80px;
+      position: relative;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #d8f4f8;
 
-      &:last-child {
-        border-bottom: solid 0px;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        left: -10px;
+        top: 12px;
+        border-right: 15px solid #d8f4f8;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
       }
 
-      /* アイコン画像 */
-      figure {
-        width: 50px;
-        padding: 0;
-        margin: 0;
-        float: left;
-        width: 50px;
 
-        /* 正方形を用意 */
-        img{
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-        }
-      }
-      /* コメントエリア */
-      .twitter__block-text {
-        margin: 0;
-        position: relative;
-        margin-left: 60px;
-        padding-right: 10px;
-
-        .name {
-          font-weight: bold;
-
-          .name_reply {
-            color: #8a9aa4;
-            margin-left: 10px;
-          }
-        }
-
-        .date {
-          position: absolute;
-          top:0;
-          right: 20px;
-          text-align:right;
-          color: #8a9aa4;
-        }
-
-        .text {
-
-          margin: 5px 0;
-
-          .in-pict img{
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            margin: 5px 0;
-            width: 95%;
-            height: 200px;
-            object-fit: cover;
-          }
-        }
-
-        /*///////////////////////////////////////////
-        //埋め込みアイコン
-        ////////////////////////////////////////////*/
-
-        .twitter__icon {
-
-          br {
-            display: none;
-          }
-          
-          $icons: 'twitter-bubble', 'twitter-heart', 'twitter-loop';
-
-          @each $icon in $icons {
-            .#{$icon} {
-              width: 14px;
-              height: 14px;
-              display: block;
-              padding-left: 20px;
-              background: url('../svg/' + $icon + '.svg') left no-repeat;
-              width: 20%;
-              float: left;
-              color: #8a9aa4;
-            }
-          }
-        }
-
-
-      }
     }
+
+  }
+
+  .balloon__right {
+    width: 100%;
+    position: relative;
+    display: block;
+    float: right;
+    max-width: 80%;
+    clear: both;
+
+    figure {
+      right: 0;
+    }
+
+    .balloon__text {
+      margin-right: 80px;
+      position: relative;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #eeeeee;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        right: -10px;
+        top: 12px;
+        border-left: 15px solid #eeeeee;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+      }
+
+
+
+    }
+
+  }
+
+}
+
+
+@media only screen and (max-width: 767px){
+  .balloon__contener .balloon__left,
+  .balloon__contener .balloon__right {
+    max-width: 100%;
+  }
+}
+
+
+/*/////////////////////////////////////////////////
+//チャット画面(会話方式)にアイコンを追加する方法
+/////////////////////////////////////////////////*/
+
+.balloon__contener {
+
+  .icon_emotion {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top:0px;
+      left:40px;
+      background-size: auto 100%;
+      padding: 0;
+  }
+
+  .balloon__right {
+    .icon_emotion {
+        left:0px;
+    }
+  }
+}
+
+
+
+/*//// ガーン /////*/
+@keyframes icon_shock {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  51%,
+	100% {
+    opacity: 1;
+  }
+}
+
+.icon_shock {
+
+  .balloon__left .balloon__text {
+    background-color: #c7ade2;
+
+    &::after {
+      border-right: 15px solid #c7ade2;
+    }
+  }
+
+  .icon_emotion {
+    	background: url("./icon/icon_shock.svg") repeat-x 0 0;
+    	animation: icon_shock 1s ease-in-out infinite alternate;
+  }
+}
+
+/*//// 汗 /////*/
+@keyframes icon_sweat {
+  16.65% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.icon_sweat {
+
+  .balloon__left .balloon__text {
+    background-color: #a5d4d8;
+  }
+
+  .balloon__left .balloon__text::after {
+    border-right: 15px solid #a5d4d8;
+  }
+
+  .icon_emotion {
+    	background: url("./icon/icon_sweat.svg") repeat-x 0 0;
+    	animation: icon_sweat 1s ease-in-out infinite alternate;
+  }
+}
+
+/*//// 気分UP /////*/
+@keyframes icon_up {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(1em);
+    transform: translateY(1em);
+  }
+}
+
+.icon_up {
+
+  .balloon__left .balloon__text {
+    background-color: #f0d2a7;
+  }
+
+  .balloon__left .balloon__text::after {
+    border-right: 15px solid #f0d2a7;
+  }
+
+  .icon_emotion {
+  	background: url("./icon/icon_up.svg") repeat-x 0 0;
+  	animation: icon_up 1s ease-in-out infinite alternate;
+  }
+}
+
+/*//// 怒る /////*/
+@keyframes icon_angry {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+.icon_angry {
+
+  .balloon__left .balloon__text {
+    background-color: #e7b3b1;
+  }
+
+  .balloon__left .balloon__text::after {
+    border-right: 15px solid #e7b3b1;
+  }
+
+  .icon_emotion {
+  	background: url("./icon/icon_angry.svg") repeat-x 0 0;
+  	animation: icon_angry 1s ease-in-out infinite alternate;
+  }
+}
+
+/*//// ハート /////*/
+@keyframes icon_heart {
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+.icon_heart {
+
+  .balloon__left .balloon__text {
+    background-color: #f9d7e8;
+  }
+
+  .balloon__left .balloon__text::after {
+    border-right: 15px solid #f9d7e8;
+  }
+
+  .icon_emotion {
+  	background: url("./icon/icon_heart.svg") repeat-x 0 0;
+  	animation: icon_heart 1s ease-in-out infinite alternate;
+  }
+}
+
+/*//// 気分ダウン /////*/
+@keyframes img_down {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  51%,
+	100% {
+    opacity: 1;
+  }
+}
+
+.img_down {
+
+  .balloon__left .balloon__text {
+    background-color: #adbedb;
+  }
+
+  .balloon__left .balloon__text::after {
+    border-right: 15px solid #adbedb;
+  }
+
+  .icon_emotion {
+  	background: url("./icon/icon_down.svg") repeat-x 0 0;
+  	animation: img_down 1.3s ease-in-out infinite alternate;
   }
 }
