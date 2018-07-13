@@ -18,36 +18,76 @@ hr {
   border: 0px;
 }
 
+p{
+  padding:20px;
+}
+
 
 /*/////////////////////////////////////////////////
 //フレーム装飾
 /////////////////////////////////////////////////*/
 
 .frame_1 {
-  position: relative;
-  background: #f8f0e4;
-  border-radius: 10px;
+  border:solid 1px #9D50BB;
   padding: 20px;
   line-height: 130%;
   display: block;
 }
 
 .frame_1 h3{
-  position: absolute;
-  top:-30px;
-  left: 10px;
+  display: block;
+  line-height: 130%;
+  font-size: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.frame_2 {
+  line-height: 130%;
+  display: block;
+}
+
+.frame_2 h3{
+  display: block;
+  line-height: 130%;
+  font-size: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #9D50BB;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.frame_3 {
+  position: relative;
+  background: #f8f0e4;
+  line-height: 130%;
+  display: block;
+}
+
+.frame_3 h3{
   display: block;
   background:#9D50BB;
   color: #fff;
-  border-radius: 10px;
   padding: 5px 20px;
   text-align: center;
   line-height: 130%;
   font-size: 90%;
+  position: relative;
+}
+
+.frame_3 h3::after {
+  border: 8px solid transparent;
+  border-top-color: #9D50BB;
+  content: '';
+  height: 0;
+  left: 49%;
+  position: absolute;
+  top: 100%;
+  width: 0;
 }
 
 
-.frame_2{
+.frame_12{
   background: #9D50BB;
   color: #fff;
   border-radius: 5px;
@@ -55,7 +95,7 @@ hr {
   text-align: left;
 }
 
-.frame_2 h3 {
+.frame_12 h3 {
   width: 100%;
   font-size: 150%;
   margin: 0 0 20px 0;
@@ -63,13 +103,13 @@ hr {
   text-align: center;
 }
 
-.frame_3{
+.frame_13{
   background: #f8f0e4;
   padding: 10px;
   text-align: left;
 }
 
-.frame_3 h3 {
+.frame_13 h3 {
   width: 100%;
   font-size: 120%;
   margin: -10px -10px 10px -10px;
@@ -78,13 +118,13 @@ hr {
   background: #9D50BB;
 }
 
-.frame_4{
+.frame_14{
   background: #f8f0e4;
   padding: 10px;
   text-align: left;
 }
 
-.frame_4 h3 {
+.frame_14 h3 {
   border-radius: 20px;
   font-size: 120%;
   padding: 10px;
@@ -93,7 +133,7 @@ hr {
   background: #9D50BB;
 }
 
-.frame_5 {
+.frame_15 {
   position: relative;
   background: #f8f0e4;
   border-radius: 10px;
@@ -102,7 +142,7 @@ hr {
   display: block;
 }
 
-.frame_5 h3{
+.frame_15 h3{
   transform: rotate(-30deg);
   position: absolute;
   top:-20px;
@@ -115,13 +155,26 @@ hr {
   text-align: center;
   line-height: 130%;
   font-size: 90%;
+  animation: kurukurku 3s ease infinite alternate;
 }
 
-.frame_6{
+@keyframes kurukurku{
+  0% {
+    transform: rotate(-30deg);
+  }
+  90% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-40deg);
+  }
+}
+
+.frame_16{
   text-align: left;
 }
 
-.frame_6 h3 {
+.frame_16 h3 {
   font-size: 120%;
   padding: 10px;
   margin: 0 0 10px 0;
