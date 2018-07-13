@@ -31,6 +31,7 @@ code{
   margin-right: 5px;
 }
 
+/* 色パターン */
 code.red{
   background: #ff0000;
   color: #fff;
@@ -46,6 +47,8 @@ code.yellow{
   color: #fff;
 }
 
+
+/* ボックス表示 */
 .pre__box pre {
   padding: 0;
   margin: 0;
@@ -67,6 +70,7 @@ code.yellow{
   display: block;
 }
 
+/* CSSアイコン */
 .pre__box.code_css::before{
   position: absolute;
   top:-5px;
@@ -83,6 +87,7 @@ code.yellow{
   content: 'CSS';
 }
 
+/* HTMLアイコン */
 .pre__box.code_html::before{
   position: absolute;
   top:-5px;
@@ -99,6 +104,7 @@ code.yellow{
   content: 'HTML';
 }
 
+/* JSアイコン */
 .pre__box.code_js::before{
   position: absolute;
   top:-5px;
@@ -115,6 +121,7 @@ code.yellow{
   content: 'JS';
 }
 
+/* PHPアイコン */
 .pre__box.code_php::before{
   position: absolute;
   top:-5px;
@@ -131,6 +138,7 @@ code.yellow{
   content: 'PHP';
 }
 
+/* コピーボタン */
 .pre__box .btn_copy {
   position: absolute;
   top:10px;
@@ -162,29 +170,4 @@ code.yellow{
   background:#9D50BB url(./assets/img/copy.png) no-repeat 5px 3px;
   background-size:20px auto;
   cursor : pointer;
-}
-
-.btn_copy_tooltip{
-  position: absolute;
-  top:80%;
-  left: 80%;
-  z-index: 9999;
-  background: #9D50BB;
-  color: #fff;
-  border-radius: 5px;
-  padding: 2px;
-  font-size: 70%;
-  width: 30px;
-  text-align: center;
-}
-
-.btn_copy_tooltip:after {
-  width: 100%;
-  content: "";
-  display: block;
-  position: absolute;
-  left: 5px;
-  top: -6px;
-  border-top:6px solid transparent;
-  border-left:6px solid #9D50BB;
 }

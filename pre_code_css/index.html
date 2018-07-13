@@ -14,11 +14,11 @@
     <h2>code</h2>
     <code>border: solid 1px #dddddd;</code>の<code class="red">#dddddd</code>を<code class="blue">#ffffff</code>か<code class="yellow">#fff0000</code>変更する。
   </section>
-  
-  <section>
 
+  <section>
     <h2>pre</h2>
 
+    <!-- CSS -->
     <div class="pre__box code_css">
       <span class="btn_copy" data-clipboard-target="#code_1">コピー</span>
       <pre><code id="code_1" class="php">
@@ -28,6 +28,7 @@
       </code></pre>
     </div>
 
+    <!-- HTML -->
     <div class="pre__box code_html">
       <span class="btn_copy" data-clipboard-target="#code_2">コピー</span>
 
@@ -48,6 +49,7 @@
       </code></pre>
     </div>
 
+    <!-- JS -->
     <div class="pre__box code_js">
       <span class="btn_copy" data-clipboard-target="#code_3">コピー</span>
       <pre><code id="code_3" class="js">
@@ -56,6 +58,7 @@
         </code></pre>
       </div>
 
+      <!-- PHP -->
       <div class="pre__box code_php">
         <span class="btn_copy" data-clipboard-target="#code_4">コピー</span>
         <pre><code id="code_4" class="php">
@@ -64,8 +67,6 @@
       </div>
 
     </section>
-
-    <!-- Trigger -->
 
     <script>
     new ClipboardJS('.btn_copy');
