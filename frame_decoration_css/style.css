@@ -2,6 +2,11 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  counter-reset: chapter;
+}
+h2:before {
+  content: counter(chapter) "章. ";
+  counter-increment: chapter;
 }
 
 section {
@@ -37,12 +42,14 @@ p{
 .frame_1 h3{
   display: block;
   line-height: 130%;
-  font-size: 100%;
+  font-size: 120%;
   margin: 0;
   margin-bottom: 10px;
 }
 
 .frame_2 {
+  border:dotted 4px #9D50BB;
+  padding: 20px;
   line-height: 130%;
   display: block;
 }
@@ -50,9 +57,7 @@ p{
 .frame_2 h3{
   display: block;
   line-height: 130%;
-  font-size: 100%;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #9D50BB;
+  font-size: 120%;
   margin: 0;
   margin-bottom: 10px;
 }
@@ -71,7 +76,7 @@ p{
   padding: 5px 20px;
   text-align: center;
   line-height: 130%;
-  font-size: 90%;
+  font-size: 120%;
   position: relative;
 }
 
@@ -86,8 +91,43 @@ p{
   width: 0;
 }
 
+.frame_4 {
+  position: relative;
+  background: #f8f0e4;
+  line-height: 130%;
+  display: block;
+  padding: 20px;
+}
 
-.frame_12{
+.frame_4:before {
+  content: "POINT";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 50px;
+  height: 35px;
+  margin: 0;
+  padding: 15px 0 0 0;
+  border-radius: 50%;
+  background: #9D50BB;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+
+.frame_4 h3{
+  display: block;
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  line-height: 130%;
+  font-size: 120%;
+}
+
+
+.frame_5{
   background: #9D50BB;
   color: #fff;
   border-radius: 5px;
@@ -95,7 +135,7 @@ p{
   text-align: left;
 }
 
-.frame_12 h3 {
+.frame_5 h3 {
   width: 100%;
   font-size: 150%;
   margin: 0 0 20px 0;
@@ -103,13 +143,13 @@ p{
   text-align: center;
 }
 
-.frame_13{
+.frame_6{
   background: #f8f0e4;
   padding: 10px;
   text-align: left;
 }
 
-.frame_13 h3 {
+.frame_6 h3 {
   width: 100%;
   font-size: 120%;
   margin: -10px -10px 10px -10px;
@@ -118,13 +158,13 @@ p{
   background: #9D50BB;
 }
 
-.frame_14{
+.frame_7{
   background: #f8f0e4;
   padding: 10px;
   text-align: left;
 }
 
-.frame_14 h3 {
+.frame_7 h3 {
   border-radius: 20px;
   font-size: 120%;
   padding: 10px;
@@ -133,7 +173,7 @@ p{
   background: #9D50BB;
 }
 
-.frame_15 {
+.frame_8 {
   position: relative;
   background: #f8f0e4;
   border-radius: 10px;
@@ -142,7 +182,7 @@ p{
   display: block;
 }
 
-.frame_15 h3{
+.frame_8 h3{
   transform: rotate(-30deg);
   position: absolute;
   top:-20px;
@@ -170,15 +210,33 @@ p{
   }
 }
 
-.frame_16{
+.frame_9{
   text-align: left;
 }
 
-.frame_16 h3 {
+.frame_9 h3 {
   font-size: 120%;
   padding: 10px;
   margin: 0 0 10px 0;
   color: #fff;
   display: block;
   background: #9D50BB;
+}
+
+.frame_10 {
+  line-height: 130%;
+  display: block;
+  border:solid 1px rgba(0, 93, 177, 1);
+  padding: 20px;
+}
+
+.frame_10 h3{
+  display: block;
+  line-height: 130%;
+  font-size: 120%;
+  margin: 0;
+  color: #fff;
+  padding:5px 0 5px 10px;
+  margin: -20px -20px 10px -20px;
+  background: linear-gradient(-45deg, rgba(231, 60, 126, 1), rgba(35, 166, 213, 1));
 }
