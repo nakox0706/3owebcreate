@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/*----------このエリアは削除すると正しく動作しない可能性があります----------
+
+Theme Name:   LION MEDIA Child
+Theme URI:    http://fit-jp.com/theme/
+Description:  FIT(フィット) が制作するメディア用WordPressTHEME「LION MEDIA」の子テーマ
+Author:       Kota Naito　@FIT(フィット)
+Author URI:   http://fit-jp.com/about/
+Template:     lionmedia
+Version:      1.2
+License:      GNU GENERAL PUBLIC LICENSE
+License URI:  http://www.gnu.org/licenses/gpl.html
+
+----------このエリアは削除すると正しく動作しない可能性があります----------*/
+
+/*/////////////////////////////////////////////////
+//下記ユーザーカスタマイズエリア
+/////////////////////////////////////////////////*/
+/*//clearfix///*/
+.cf:after{
+  content: ".";
+  display: block;
+  height: 0;
+  font-size:0;
+  clear: both;
+  visibility:hidden;
+}
+
+.cf{display: inline-block;}
+
+/* Hides from IE Mac \*/
+* html .cf {height: 1%;}
+.cf{display:block;}
+/* End Hack */
+
+/*//ヘッダー固定///*/
+
+.l-extra {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1000;
+}
+
+.t-light .l-extra {
+  border-bottom: 0;
+  background: linear-gradient(-45deg, rgba(0, 93, 177, .8), rgba(219, 201, 0, .8));
+}
+
+.searchNavi {
+  padding: 10px 0;
+}
+.globalNavi {
+  padding: 0;
+}
+
+.globalNavi__list .menu-item {
+  padding: 0;
+  height: auto;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+.globalNavi__list .page_item a,
+.globalNavi__list .menu-item a{
+  display: block;
+  padding: 19px 15px;
+  font-weight: normal;
+  transition: .2s;
+  color: #fff;
+}
+
+.globalNavi__list .current,
+.globalNavi__list .current a:hover,
+.globalNavi__list .menu-item a:hover {
+  background: #000;
+  display: block;
+  color: #fff;
+  font-weight: normal;
+}
+
+
+@media only screen and (max-width: 767px){
+
+  .globalNavi::-webkit-scrollbar {
+    height: 2px;
+  }
+  .globalNavi::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
+  .globalNavi::-webkit-scrollbar-thumb {
+    background: #f0b200;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  }
+
+}
