@@ -35,8 +35,8 @@
   color: #fff;
 }
 
-.globalNavi__list .current,
-.globalNavi__list .current a:hover,
+.globalNavi__list .current-menu-item,
+.globalNavi__list .current-menu-item a:hover,
 .globalNavi__list .menu-item a:hover {
   background: #000;
   display: block;

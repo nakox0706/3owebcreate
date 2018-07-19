@@ -73,7 +73,7 @@
 
               <li class="menu-item"><a href="/">全ての記事</a></li>
               <li class="menu-item"><a href="1.html">人気記事</a></li>
-              <li class="menu-item current"><a href="2.html">WordPressでサイトを作ろう</a></li>
+              <li class="menu-item current-menu-item"><a href="2.html">WordPressでサイトを作ろう</a></li>
               <li class="menu-item"><a href="3.html">WEB制作のヒント</a></li>
               <li class="menu-item"><a href="4.html">共働き家庭の育児トピックス</a></li>
               <li class="menu-item"><a href="5.html">ちけじのゲーム情報</a></li>
@@ -127,7 +127,7 @@
         $(document).ready( function(){
 
           var _globalnavi = $(".globalNavi"),
-          _current = $(".current");
+          _current = $(".current-menu-item");
           extraWidth = $(window).width(),
           leftOffset = _current.offset().left,
           scrollvalue = -20 + leftOffset;
