@@ -62,16 +62,23 @@ a {
   color: #333 ;
 }
 
-.wp-embed__sp {
+.wp-embed__sp{
   padding: 0;
   line-height: 120%;
   font-size: 12px;
   display: table;
   border: solid 1px #ccc;
+}
+
+.wp-embed__sp-box {
+  padding: 0;
+  line-height: 120%;
+  font-size: 12px;
+  display: table;
 
 }
 
-.wp-embed__sp img{
+.wp-embed__sp-box img{
   width: 100%;
   height: auto;
   vertical-align: top;
@@ -98,6 +105,12 @@ a {
   color: #ddd;
   font-size: 80%;
 }
+
+.wp-embed__sp .wp-embed-footer {
+  display: block;
+	padding: 3%;
+}
+
 
 </style>
 
@@ -138,8 +151,9 @@ if ( $thumbnail_id ) {
   $ua = $_SERVER['HTTP_USER_AGENT'];
   if (preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
     ?>
-    <a href="<?php the_permalink(); ?>" target="_top">
     <div class="wp-embed__sp">
+    <a href="<?php the_permalink(); ?>" target="_top">
+    <div class="wp-embed__sp-box">
       <?php
       if ( $thumbnail_id && 'rectangular' === $shape ) : ?>
         <div class="wp-embed__sp-featured-image">
@@ -149,8 +163,6 @@ if ( $thumbnail_id ) {
       <?php endif; ?>
       <div class="wp-embed__sp-heading">
           <?php the_title(); ?>
-
-          <span>3oWebCreate</span>
       </div>
 
       <?php if ( $thumbnail_id && 'square' === $shape ) : ?>
@@ -168,6 +180,11 @@ if ( $thumbnail_id ) {
       ?>
     </div>
     </a>
+    <div class="wp-embed-footer">
+      <?php the_embed_site_title() ?>
+    </div>
+
+  </div>
     <?php
   }else {
     ?>
