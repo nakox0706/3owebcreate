@@ -202,7 +202,7 @@ if ( $thumbnail_id ) {
         <a href="<?php the_permalink(); ?>" target="_top">
           <?php the_title(); ?>
         </a>
-            <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 150) ?></div>
+            <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 150). '...続きを読む' ?></div>
       </div>
 
       <?php if ( $thumbnail_id && 'square' === $shape ) : ?>
@@ -210,7 +210,7 @@ if ( $thumbnail_id ) {
           <a href="<?php the_permalink(); ?>" target="_top">
             <?php echo wp_get_attachment_image( $thumbnail_id, $image_size ); ?>
           </a>
-              <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 150) ?></div>
+              <div class="wp-embed-excerpt"><?php echo mb_substr(str_replace(array("\r\n", "\r", "\n"), '', strip_tags(get_the_excerpt())), 0, 150). '...続きを読む' ?></div>
         </div>
       <?php endif; ?>
       <?php
