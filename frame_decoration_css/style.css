@@ -27,6 +27,13 @@ p{
   padding:20px;
 }
 
+@media only screen and (max-width: 767px){
+  section {
+    width: 90%;
+    margin: 5% auto;
+  }
+}
+
 
 /*/////////////////////////////////////////////////
 //フレーム装飾
