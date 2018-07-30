@@ -2,7 +2,6 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-  counter-reset: chapter;
 }
 
 section {
@@ -18,10 +17,6 @@ img {
 hr {
   padding: 20px;
   border: 0px;
-}
-
-p{
-  padding:20px;
 }
 
 ul{
@@ -59,8 +54,12 @@ ul{
   z-index: 1;
 }
 .count_1 li {
-  counter-reset: section;
-  padding: 10px 0;
+  padding: 10px;
+  background: #cde2e8;
+}
+
+.count_1 li:nth-child(even) {
+  background: #eee;
 }
 
 /*/////////////////////////////////////////////////
@@ -85,8 +84,12 @@ ul{
   z-index: 1;
 }
 .count_2 li {
-  counter-reset: section;
-  padding: 10px 0;
+  padding: 10px;
+  background: #cde2e8;
+}
+
+.count_2 li:nth-child(even) {
+  background: #eee;
 }
 
 /*/////////////////////////////////////////////////
@@ -111,8 +114,12 @@ ul{
   z-index: 1;
 }
 .count_3 li {
-  counter-reset: section;
-  padding: 10px 0;
+  padding: 10px;
+  background: #cde2e8;
+}
+
+.count_3 li:nth-child(even) {
+  background: #eee;
 }
 
 /*/////////////////////////////////////////////////
@@ -127,24 +134,27 @@ ul{
   content: "" counter(chapter) ;
   counter-increment: chapter;
   position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    padding:5px;
-    text-align: center;
-    text-decoration: none;
-    margin-right: 5px;
-    color: #FFF;
-    background: #30b0d8;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    font-weight: bold;;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding:5px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 5px;
+  color: #FFF;
+  background: #30b0d8;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;;
 }
 
 .count_4 li {
-  counter-reset: section;
-  padding: 10px 0;
+  background: #cde2e8;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
+.count_4 li:nth-child(even) {
+  background: #eee;
+}
 
 /*/////////////////////////////////////////////////
 //連番リスト5
@@ -161,231 +171,163 @@ ul{
 }
 
 .count_5 li:nth-child(even) {
-	background: #eee;
+  background: #eee;
 }
 
 .count_5 li:before {
   content: "STEP" counter(chapter) ;
   counter-increment: chapter;
-    display: inline-block;
-    padding:5px;
-    text-align: center;
-    text-decoration: none;
-    margin-right: 5px;
-    color: #FFF;
-    background: #30b0d8;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-    font-weight: bold;
+  display: inline-block;
+  padding:5px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 5px;
+  color: #FFF;
+  background: #30b0d8;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
 .count_5 li:after{
   content: "";
-	position: absolute;
-	bottom: -30px;
-	left: 50%;
- 	margin-left: -15px;
-	border: 15px solid transparent;
-	border-top: 15px solid #cde2e8;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #cde2e8;
   z-index: 1;
 }
 
 .count_5 li:nth-child(even):after {
-	border-top: 15px solid #eee;
+  border-top: 15px solid #eee;
 }
 
+.count_5 li.count_5-last:before,
+.count_5 li.count_5-last::after {
+  display: none;
+}
 
-.frame_2 {
-  border:dotted 4px #9D50BB;
+/*/////////////////////////////////////////////////
+//連番リスト6
+/////////////////////////////////////////////////*/
+
+.count_6{
+  counter-reset: chapter;
+}
+
+.count_6 li {
+  background: #cde2e8;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.count_6 li p{
   padding: 20px;
-  line-height: 130%;
-  display: block;
-}
-
-.frame_2 h3{
-  display: block;
-  line-height: 130%;
-  font-size: 120%;
   margin: 0;
-  margin-bottom: 10px;
 }
 
-.frame_3 {
-  position: relative;
-  background: #f8f0e4;
-  line-height: 130%;
-  display: block;
-  padding: 20px;
+.count_6 li:nth-child(even) {
+  background: #eee;
 }
 
-.frame_3 h3{
+.count_6 li:before {
+  content: "STEP " counter(chapter) ;
+  counter-increment: chapter;
   display: block;
-  background:#9D50BB;
-  color: #fff;
-  padding: 5px 20px;
+  padding:5px;
   text-align: center;
-  line-height: 130%;
-  font-size: 120%;
-  margin: -20px -20px 20px -20px;
-  position: relative;
+  text-decoration: none;
+  color: #FFF;
+  background: #30b0d8;
+  font-weight: bold;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
 }
 
-.frame_3 h3::after {
-  border: 8px solid transparent;
-  border-top-color: #9D50BB;
-  content: '';
-  height: 0;
-  left: 49%;
+.count_6 li:after{
+  content: "";
   position: absolute;
-  top: 100%;
-  width: 0;
-}
-
-.frame_4 {
-  position: relative;
-  background: #f8f0e4;
-  line-height: 130%;
-  display: block;
-  padding: 20px;
-}
-
-.frame_4:before {
-  content: "POINT";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 50px;
-  height: 35px;
-  margin: 0;
-  padding: 15px 0 0 0;
-  border-radius: 50%;
-  background: #9D50BB;
-  color: #fff;
-  font-size: 10px;
-  text-align: center;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #cde2e8;
   z-index: 1;
 }
 
+.count_6 li:nth-child(even):after {
+  border-top: 15px solid #eee;
+}
 
-.frame_4 h3{
-  display: block;
-  margin: 0;
+.count_6 li.count_6-last:before,
+.count_6 li.count_6-last::after {
+  display: none;
+}
+
+/*/////////////////////////////////////////////////
+//連番リスト7
+/////////////////////////////////////////////////*/
+
+.count_7{
+  counter-reset: chapter;
+}
+
+.count_7 li {
+  margin-bottom: 20px;
+  border-radius: 10px;
   padding-bottom: 20px;
-  text-align: center;
-  line-height: 130%;
-  font-size: 120%;
+  border-bottom: 1px dashed #cde2e8;
 }
 
-
-.frame_5{
-  background: #9D50BB;
+.count_7 li:before {
+  content: "人気 "counter(chapter) " 位";
+  counter-increment: chapter;
+  margin: 0 5px 0 0;
+  padding:10px;
+  border-radius: 50px;
+  background: #30b0d8;
   color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: left;
+  text-align: center;
 }
 
-.frame_5 h3 {
+.count_7 li:nth-child(2n):before {
+  background: #85aa5b;
+}
+
+.count_7 li:nth-child(3n):before {
+  background: #c96bc4;
+}
+
+/*/////////////////////////////////////////////////
+//連番リスト8
+/////////////////////////////////////////////////*/
+
+.count_8{
+  counter-reset: chapter;
+}
+
+.count_8 li {
+  z-index: 0;
+  width: 33.333%;
+  float: left;
+}
+
+.count_8 li:after {
+  content:counter(chapter) " 位";
+  counter-increment: chapter;
+  background: #30b0d8;
+  color: #fff;
+  text-align: center;
   width: 100%;
-  font-size: 150%;
-  margin: 0 0 20px 0;
-  padding: 0;
-  text-align: center;
-}
-
-.frame_6{
-  background: #f8f0e4;
-  padding: 10px;
-  text-align: left;
-}
-
-.frame_6 h3 {
-  width: 100%;
-  font-size: 120%;
-  margin: -10px -10px 10px -10px;
-  padding: 10px;
-  color: #fff;
-  background: #9D50BB;
-}
-
-.frame_7{
-  background: #f8f0e4;
-  padding: 10px;
-  text-align: left;
-}
-
-.frame_7 h3 {
-  border-radius: 20px;
-  font-size: 120%;
-  padding: 10px;
-  margin: 0 0 10px 0;
-  color: #fff;
-  background: #9D50BB;
-}
-
-.frame_8 {
-  position: relative;
-  background: #f8f0e4;
-  border-radius: 10px;
-  padding: 20px;
-  line-height: 130%;
   display: block;
 }
 
-.frame_8 h3{
-  transform: rotate(-30deg);
-  position: absolute;
-  top:-20px;
-  left: -30px;
-  display: block;
-  background:#9D50BB;
-  color: #fff;
-  border-radius: 10px;
-  padding: 5px 20px;
-  text-align: center;
-  line-height: 130%;
-  font-size: 90%;
-  animation: kurukurku 3s ease infinite alternate;
+.count_8 li:nth-child(2n):after {
+  background: #85aa5b;
 }
 
-@keyframes kurukurku{
-  0% {
-    transform: rotate(-30deg);
-  }
-  90% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(-40deg);
-  }
-}
-
-.frame_9{
-  text-align: left;
-}
-
-.frame_9 h3 {
-  font-size: 120%;
-  padding: 10px;
-  margin: 0 0 10px 0;
-  color: #fff;
-  display: block;
-  background: #9D50BB;
-}
-
-.frame_10 {
-  line-height: 130%;
-  display: block;
-  border:solid 1px rgba(0, 93, 177, 1);
-  padding: 20px;
-}
-
-.frame_10 h3{
-  display: block;
-  line-height: 130%;
-  font-size: 120%;
-  margin: 0;
-  color: #fff;
-  padding:5px 0 5px 10px;
-  margin: -20px -20px 10px -20px;
-  background: linear-gradient(-45deg, rgba(231, 60, 126, 1), rgba(35, 166, 213, 1));
+.count_8 li:nth-child(3n):after {
+  background: #c96bc4;
 }
