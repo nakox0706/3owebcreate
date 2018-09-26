@@ -130,7 +130,7 @@ $thumbnail_id = apply_filters( 'embed_thumbnail_id', $thumbnail_id );
 if ( $thumbnail_id ) {
   $aspect_ratio = 1;
   $measurements = array( 1, 1 );
-  $image_size   = 'full'; // Fallback.
+  $image_size   = 'large'; // （'thumbnail', 'medium', 'large', 'full'）
 
   $meta = wp_get_attachment_metadata( $thumbnail_id );
   if ( ! empty( $meta['sizes'] ) ) {
