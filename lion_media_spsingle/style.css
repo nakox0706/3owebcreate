@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/*----------このエリアは削除すると正しく動作しない可能性があります----------
+
+Theme Name:   LION MEDIA Child
+Theme URI:    http://fit-jp.com/theme/
+Description:  FIT(フィット) が制作するメディア用WordPressTHEME「LION MEDIA」の子テーマ
+Author:       Kota Naito　@FIT(フィット)
+Author URI:   http://fit-jp.com/about/
+Template:     lionmedia
+Version:      1.2
+License:      GNU GENERAL PUBLIC LICENSE
+License URI:  http://www.gnu.org/licenses/gpl.html
+
+----------このエリアは削除すると正しく動作しない可能性があります----------*/
+
+
+
+/*/////////////////////////////////////////////////
+//SP最適化
+/////////////////////////////////////////////////*/
+
+.noSp {
+  display: block !important;
+}
+.noPc {
+  display: none !important;
+}
+
+@media only screen and (max-width: 767px){
+
+
+  .l-wrapper {
+    width: 100%;
+    padding:0 5%;
+  }
+
+  .l-main {
+    width: 100%;
+    padding:5% 0;
+  }
+
+  .l-sidebar {
+    padding: 0 0 40px 0;
+  }
+
+  /* サイドバー要素非表示　*/
+  .related__contents {
+    display: none;
+  }
+
+  /*//記事リンク///*/
+
+  .archive {
+    margin-left:0;
+  }
+
+  .archiveItem {
+    padding: 10px 0 20px 0;
+    margin-top: 10px;
+    border-top: dotted 1px #D8D8D8;
+  }
+
+  .archiveItem:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+
+  .archive__lap {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .archive__lap:hover {
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);;
+    transform: scale(1.02);
+    transition: box-shadow 0.1s ease,
+    transform 0.1s ease,
+    z-index 0s 0s ease;
+  }
+
+  .archive__lap a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent:-999px;
+  }
+
+  .archiveItem .eyecatch {
+    width: 40%;
+    margin: 0;
+    margin-right:10px;
+    float: left;
+    box-shadow: 0 2px 2px -6px rgba(0,0,0,.1);
+  }
+
+  .archiveItem.archiveItem-wide,
+  .archiveItem.archiveItem-wideSp {
+    width: 100%;
+    margin: 0;
+    padding-top: 0px;
+    border-top:  0px;
+  }
+
+
+  .archiveItem.archiveItem-wide .heading.heading-archive,
+  .archiveItem.archiveItem-wideSp .heading.heading-archive,
+  .heading.heading-archive {
+    font-size: 1.2rem;
+    line-height: 130%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 10px 0;
+  }
+
+  .archive  .dateList.dateList-archive{
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+  }
+
+  .archive  .dateList__item {
+    font-size: 60%;
+  }
+
+  .archive  .icon-history,
+  .archive  .icon-tag{
+    display: none;
+  }
+
+  /* フォントサイズ大きく　*/
+  .content{
+    line-height: 170%;
+    font-size: 110%;
+    margin-top: 0;
+  }
+
+  .content h2 {
+    padding: 15px;
+    color: #191919;
+    border: 1px solid #E5E5E5;
+    border-left: 5px solid #f0b200;
+    font-size: 2rem;
+  }
+
+  /* タイトルバー幅狭く　*/
+  .singleTitle__heading {
+    min-height: 30px;
+    padding:5%;
+    padding-bottom: 0;
+    color: #000;
+
+  }
+
+  .heading.heading-singleTitle {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  /* タイトルバー幅狭く　*/
+  .categoryDescription__explain {
+    margin-bottom: 0px;
+    padding: 5px;
+  }
+  /* タイトルバー幅狭く　*/
+  .categoryDescription__heading {
+    margin-bottom: 0;
+    padding-bottom: 5px;
+  }
+
+  .categoryDescription {
+    padding: 10px 0;
+  }
+
+  .heading.heading-singleTitle {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .breadcrumb,
+  .categoryDescription__post {
+    display: none;
+  }
+
+  .t-rich .single_eyecatch .eyecatch {
+    box-shadow: 0px ;
+  }
+
+  .singleTitle {
+    overflow: hidden;
+  }
+  .singleTitle::after {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+    -webkit-filter: blur(6px);
+            filter: blur(6px);
+  }
+
+  .single_eyecatch {
+    width: 100%;
+    height: auto;
+  }
+
+  .single_eyecatch .eyecatch {
+    box-shadow: 0 0 0 0 rgba(0,0,0,1);
+    margin-bottom: 0px;
+  }
+
+
+  .single_eyecatch .eyecatch img:hover {
+    transform: scale(1);
+  }
+
+  .single_eyecatch img{
+    width: 100%;
+    height: auto;
+  }
+
+  .content .btn {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .noSp {
+    display: none !important;
+  }
+  .noPc {
+    display: block !important;
+  }
+
+  .content .row h3 {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 420px){
+
+  .archiveItem.archiveItem-wideSp,
+  .heading.heading-archive {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 320px){
+
+  .archiveItem.archiveItem-wideSp,
+  .heading.heading-archive {
+    font-size: 1rem;
+  }
+
+}
