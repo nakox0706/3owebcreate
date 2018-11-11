@@ -53,7 +53,7 @@ if(get_the_category()){
 
       <ul class="dateList dateList-singleTitle">
         <li class="dateList__item icon-calendar"><?php the_time('Y.m.d'); ?></li>
-        <li class="dateList__item icon-history"><?php the_modified_date('Y.m.d'); ?></li>
+        <li class="dateList__item icon-history">更新日：<?php the_modified_date('Y.m.d'); ?></li>
         <li class="dateList__item icon-folder"><a class="hc<?php if (isset($cat_meta[$cat_id])) { echo esc_html($cat_meta[$cat_id]);} ?>" href="<?php echo $cat_link; ?>" rel="category"><?php echo $cat_name; ?></a></li>
         <?php if(has_tag() == true) : ?><li class="dateList__item icon-tag"><?php the_tags(''); ?></li><?php endif; ?>
       </ul>
@@ -97,7 +97,7 @@ if(get_the_category()){
 
           <ul class="dateList dateList-singleTitle">
             <li class="dateList__item icon-calendar"><?php the_time('Y.m.d'); ?></li>
-            <li class="dateList__item icon-history"><?php the_modified_date('Y.m.d'); ?></li>
+            <li class="dateList__item icon-history">更新日：<?php the_modified_date('Y.m.d'); ?></li>
             <li class="dateList__item icon-folder"><a class="hc<?php if (isset($cat_meta[$cat_id])) { echo esc_html($cat_meta[$cat_id]);} ?>" href="<?php echo $cat_link; ?>" rel="category"><?php echo $cat_name; ?></a></li>
             <?php if(has_tag() == true) : ?><li class="dateList__item icon-tag"><?php the_tags(''); ?></li><?php endif; ?>
           </ul>
@@ -140,7 +140,6 @@ if(get_the_category()){
 
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <section class="content">
-              <div class="history"><span class="icon-history"> 最終更新日：<?php the_modified_date('Y.m.d'); ?></span> </div>
               <?php the_content(); ?>
             </section>
           <?php endwhile; endif; ?>

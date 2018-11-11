@@ -43,97 +43,6 @@ License URI:  http://www.gnu.org/licenses/gpl.html
     padding: 0 0 40px 0;
   }
 
-  /* サイドバー要素非表示　*/
-  .related__contents {
-    display: none;
-  }
-
-  /*//記事リンク///*/
-
-  .archive {
-    margin-left:0;
-  }
-
-  .archiveItem {
-    padding: 10px 0 20px 0;
-    margin-top: 10px;
-    border-top: dotted 1px #D8D8D8;
-  }
-
-  .archiveItem:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-
-  .archive__lap {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .archive__lap:hover {
-    z-index: 1;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);;
-    transform: scale(1.02);
-    transition: box-shadow 0.1s ease,
-    transform 0.1s ease,
-    z-index 0s 0s ease;
-  }
-
-  .archive__lap a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-indent:-999px;
-  }
-
-  .archiveItem .eyecatch {
-    width: 40%;
-    margin: 0;
-    margin-right:10px;
-    float: left;
-    box-shadow: 0 2px 2px -6px rgba(0,0,0,.1);
-  }
-
-  .archiveItem.archiveItem-wide,
-  .archiveItem.archiveItem-wideSp {
-    width: 100%;
-    margin: 0;
-    padding-top: 0px;
-    border-top:  0px;
-  }
-
-
-  .archiveItem.archiveItem-wide .heading.heading-archive,
-  .archiveItem.archiveItem-wideSp .heading.heading-archive,
-  .heading.heading-archive {
-    font-size: 1.2rem;
-    line-height: 130%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0 0 10px 0;
-  }
-
-  .archive  .dateList.dateList-archive{
-    text-align: right;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-
-  }
-
-  .archive  .dateList__item {
-    font-size: 60%;
-  }
-
-  .archive  .icon-history,
-  .archive  .icon-tag{
-    display: none;
-  }
-
   /* フォントサイズ大きく　*/
   .content{
     line-height: 170%;
@@ -155,7 +64,11 @@ License URI:  http://www.gnu.org/licenses/gpl.html
     padding:5%;
     padding-bottom: 0;
     color: #000;
+  }
 
+  /* 投稿日等マージン詰める　*/
+  .singleTitle__heading .dateList.dateList-singleTitle {
+    padding: 0;
   }
 
   .heading.heading-singleTitle {
@@ -243,22 +156,4 @@ License URI:  http://www.gnu.org/licenses/gpl.html
   .content .row h3 {
     margin-top: 20px;
   }
-}
-
-@media only screen and (max-width: 420px){
-
-  .archiveItem.archiveItem-wideSp,
-  .heading.heading-archive {
-    font-size: 1.2rem;
-  }
-
-}
-
-@media only screen and (max-width: 320px){
-
-  .archiveItem.archiveItem-wideSp,
-  .heading.heading-archive {
-    font-size: 1rem;
-  }
-
 }
