@@ -43,9 +43,6 @@ if(get_the_category()){
 ?>
 
 <?php get_header(); ?>
-<link rel="stylesheet" href="<?php get_home_url() ?>/wp-content/themes/lionmedia-child/assets/css/highlight.min.css">
-<script src="<?php get_home_url() ?>/wp-content/themes/lionmedia-child/assets/js/highlight.min.js"></script>
-<script src="<?php get_home_url() ?>/wp-content/themes/lionmedia-child/assets/js/clipboard.min.js"></script>
 
 <div class="singleTitle">
   <div class="container">
