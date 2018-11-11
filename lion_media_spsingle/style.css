@@ -43,6 +43,11 @@ License URI:  http://www.gnu.org/licenses/gpl.html
     padding: 0 0 40px 0;
   }
 
+  /* サイドバー要素非表示　*/
+  .related__contents {
+    display: none;
+  }
+
   /* フォントサイズ大きく　*/
   .content{
     line-height: 170%;
@@ -77,28 +82,12 @@ License URI:  http://www.gnu.org/licenses/gpl.html
     color: #000;
   }
 
-  /* タイトルバー幅狭く　*/
-  .categoryDescription__explain {
-    margin-bottom: 0px;
-    padding: 5px;
-  }
-  /* タイトルバー幅狭く　*/
-  .categoryDescription__heading {
-    margin-bottom: 0;
-    padding-bottom: 5px;
-  }
-
-  .categoryDescription {
-    padding: 10px 0;
-  }
-
   .heading.heading-singleTitle {
     font-size: 1.8rem;
     margin-bottom: 10px;
   }
 
-  .breadcrumb,
-  .categoryDescription__post {
+  .breadcrumb {
     display: none;
   }
 
