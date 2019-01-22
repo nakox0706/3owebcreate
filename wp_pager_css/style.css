@@ -14,11 +14,6 @@ h2:before {
   counter-increment: chapter;
 }
 
-section {
-  width: 70%;
-  margin: 5% auto;
-}
-
 h2{
   margin-top: 60px;
 }
@@ -30,6 +25,11 @@ hr {
 
 p{
   padding:20px 0 60px 0;
+}
+
+.pager_1 ul {
+  width: 100%;
+  padding: 0;
 }
 
 @media only screen and (max-width: 767px){
@@ -46,8 +46,11 @@ p{
 
 
 /* その１  */
-.pager_1 .pagination {
+
+.pager_1  ul.pagination {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .pager_1 .pagination li {
