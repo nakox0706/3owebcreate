@@ -152,7 +152,7 @@ if ( $thumbnail_id ) {
   if (preg_match('/(iPhone|Android.*Mobile|Windows.*Phone)/', $ua)) {
     ?>
     <div class="wp-embed__sp">
-    <a href="<?php the_permalink(); ?>" target="_top">
+
     <div class="wp-embed__sp-box">
       <?php
       if ( $thumbnail_id && 'rectangular' === $shape ) : ?>
@@ -162,7 +162,9 @@ if ( $thumbnail_id ) {
         </div>
       <?php endif; ?>
       <div class="wp-embed__sp-heading">
+        <a href="<?php the_permalink(); ?>" target="_top">
           <?php the_title(); ?>
+        </a>
       </div>
 
       <?php if ( $thumbnail_id && 'square' === $shape ) : ?>
@@ -179,7 +181,7 @@ if ( $thumbnail_id ) {
       do_action( 'embed_content' );
       ?>
     </div>
-    </a>
+
     <div class="wp-embed-footer">
       <?php the_embed_site_title() ?>
     </div>
